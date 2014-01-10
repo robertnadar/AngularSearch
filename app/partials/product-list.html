@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="form-group">
+        <label for="sort by">Sort By:</label>
+        <select ng-model="orderProp" class="form-control">
+            <option value="name">Alphabetical</option>
+            <option value="age">Newest</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="sort by">Search:</label> <input ng-model="query" class="form-control" />
+    </div>
+    <button ng-click="init()" class="btn btn-primary btn-large form-control" type="button">Search</button>
+
+    <div class="list-group" ng-repeat="result in results | orderBy:orderProp:exact">
+        <a href="#/products/{{result.id}}" class="list-group-item">
+            <img ng-src="http://images.oneclickdigital.com/{{result.s3FolderName}}/{{result.s3FolderName}}_image_95x140.jpg">
+            <b>{{result.name}}</b>
+        </a>
+    </div>
+</div>

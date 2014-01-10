@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="span3" ng-repeat="pd in productDetails">
+        <div class="col-md-2">
+            <img ng-src="http://images.oneclickdigital.com/{{pd.s3FolderName}}/{{pd.s3FolderName}}_image_95x140.jpg" class="img-responsive">
+        </div>
+        <div class="col-md-10">
+            <h4>{{pd.name}}</h4>
+            <p>
+                Authors :
+                {{pd.authorsFlat}}
+            </p>
+            <p>Publisher : {{pd.publisherName}}</p>
+            <p>ISBN : {{pd.isbn}}</p>
+        </div>
+        <p>Description: {{pd.description}}</p>
+    </div>
+</div>
